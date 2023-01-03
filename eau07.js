@@ -40,16 +40,28 @@ function space(wordChar){
 }
 
 // Error:
-
+function error(str){
+    if(str === undefined || !isNaN(str)){
+        return false;
+    }else{
+        return true;
+    }
+}
 
 
 // Parsing:
 let string = process.argv[2];
-
+let newStr = "";
 
 
 // Resolve:
-let newStr = upperFirstLetter(string);
+
+if(error(string)){
+    newStr = upperFirstLetter(string);
+}else{
+    newStr = "Error!"
+}
+
 
 
 // Display:
